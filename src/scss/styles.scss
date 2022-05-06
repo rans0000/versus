@@ -250,8 +250,23 @@ body {
             &::marker {
                 content: url(../images/icon-star.svg);
             }
+
+            @media only screen and (max-width: 600px) {
+                font-size: 1.2rem;
+            }
         }
     }
+}
+.btn-mainmenu-toggle {
+    width: spacing(4);
+    height: spacing(4);
+    border-radius: spacing(0.5);
+    background: white url(../images/icon-burger.svg) no-repeat 50% 50%;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    // @todo: animate menu btn
 }
 // -----------------------------------------
 // components ends
@@ -292,6 +307,20 @@ body {
             justify-self: center;
             grid-area: 2/1/3/3;
             width: 100%;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .logo {
+            width: spacing(13);
+            height: spacing(4);
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .btn-mainmenu-toggle {
+            justify-self: end;
         }
     }
 }
