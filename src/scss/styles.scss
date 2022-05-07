@@ -4,6 +4,7 @@ $font-opensans: "Open Sans", sans-serif;
 $font-rubik: "Rubik", sans-serif;
 $color-primary: #2a357c;
 $color-primary-light: #e3f2fd;
+$color-primary-dark: #252941;
 $color-secondary: #db5462;
 $color-success-light: #8cd996;
 $color-text-dark: #4b4b4b;
@@ -56,7 +57,7 @@ body {
     width: 100%;
     height: 100%;
     font: normal normal 1.4rem/2.4rem $font-opensans;
-    background-color: white;
+    background-color: #fafafa;
     margin: 0;
     padding: 0;
 }
@@ -66,6 +67,8 @@ p {
 
 // utils starts
 // -----------------------------------------
+// typography
+// --------------------
 .heading {
     font-family: $font-rubik;
     text-transform: uppercase;
@@ -130,6 +133,46 @@ p {
     font-size: 1.4rem;
     line-height: spacing(3);
 }
+a:link,
+a:visited {
+    text-decoration: underline;
+}
+// buttons
+// --------------------
+.btn-main {
+    padding: spacing(0, 3);
+    white-space: nowrap;
+    margin: 0;
+    border-radius: spacing(3);
+    text-transform: uppercase;
+    font-family: $font-rubik;
+    font-size: 2rem;
+    font-weight: $weight-medium;
+    line-height: spacing(6);
+    min-width: min(100%, #{spacing(25)});
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+.btn-primary {
+    background-color: $color-primary;
+    color: white;
+    &:hover,
+    &:focus {
+        background-color: darken($color-primary, 10%);
+    }
+}
+.btn-secondary {
+    background-color: $color-secondary;
+    color: white;
+    &:hover,
+    &:focus {
+        background-color: darken($color-secondary, 10%);
+    }
+}
 // -----------------------------------------
 .half-split-wrapper {
     display: flex;
@@ -188,6 +231,47 @@ p {
     }
 }
 // -----------------------------------------
+.social-media-list {
+    display: flex;
+    gap: spacing(1);
+
+    .social-link {
+        display: block;
+        white-space: nowrap;
+        text-indent: 1000px;
+        overflow: hidden;
+        width: spacing(3);
+        height: spacing(3);
+        border-radius: 4px;
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: 0.3s;
+
+        &:hover,
+        &:active {
+            background-color: white;
+        }
+
+        &.social-fb {
+            background-image: url(../images/icon-fb.svg);
+        }
+        &.social-tw {
+            background-image: url(../images/icon-twitter.svg);
+        }
+        &.social-wt {
+            background-image: url(../images/icon-whatsapp.svg);
+        }
+        &.social-yt {
+            background-image: url(../images/icon-youtube.svg);
+        }
+        &.social-lk {
+            background-image: url(../images/icon-linkedin.svg);
+        }
+    }
+}
+// -----------------------------------------
 // utils ends
 // -----------------------------------------
 
@@ -243,9 +327,10 @@ p {
 
             a:link,
             a:visited {
+                display: block;
+                text-decoration: none;
                 text-transform: uppercase;
                 color: $color-primary;
-                display: block;
                 transition: 0.3s color;
             }
             a:hover,
@@ -263,6 +348,7 @@ p {
 
     .quick-contact-item {
         flex-grow: 1;
+        text-decoration: none;
     }
 }
 .quick-contact-item {
@@ -703,6 +789,148 @@ p {
     .values-box {
         background-color: $color-primary;
         padding-left: spacing(4);
+    }
+}
+// -----------------------------------------
+.catalog-download-wrapper {
+    padding: spacing(8, 0);
+    background: rgb(28, 10, 36);
+    background: linear-gradient(
+        180deg,
+        rgba(28, 10, 36, 1) 0%,
+        rgba(28, 10, 36, 1) 50%,
+        rgba(250, 250, 250, 1) 50%,
+        rgba(250, 250, 250, 1) 100%
+    );
+}
+.catalog-download {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: spacing(3);
+    background-color: white;
+    padding-top: spacing(4);
+    padding-bottom: spacing(4);
+    padding-left: Max(15%, #{spacing(4)});
+    padding-right: Max(15%, #{spacing(4)});
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+
+    > .media-box {
+        width: spacing(23);
+        height: spacing(25);
+        background: url(../images/brochure-bg.svg) 50% 50% no-repeat;
+        background-size: cover;
+    }
+    > .desc-box {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(1);
+        align-items: flex-start;
+        justify-content: center;
+
+        .title {
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: spacing(0.5);
+        }
+    }
+}
+// -----------------------------------------
+.logo-footer-wrapper {
+    background: white;
+    padding: spacing(3, 0);
+}
+.footer-main {
+    background-color: $color-primary-dark;
+    color: white;
+    padding: spacing(6, 0, 3);
+}
+.footer-top {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: spacing(4);
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .address-box {
+        display: flex;
+        flex-direction: column;
+        // height: 100%;
+
+        .title {
+            margin-bottom: spacing(0.5);
+        }
+        address {
+            display: flex;
+            flex-direction: column;
+            gap: spacing(2);
+            height: 100%;
+            font-style: normal;
+            line-height: spacing(2);
+
+            p {
+                margin: 0;
+            }
+            p + p {
+                flex-grow: 1;
+                .addr-tel > span {
+                    padding-left: spacing(0.5);
+                }
+            }
+        }
+    }
+    .social-box {
+        display: flex;
+        align-items: flex-end;
+
+        @media only screen and (max-width: 600px) {
+            justify-content: center;
+        }
+    }
+}
+.footer-legal {
+    padding: spacing(0, 0, 6);
+    background-color: $color-primary-dark;
+}
+.footer-legal > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: spacing(2);
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+}
+.legalese-link {
+    display: flex;
+    gap: spacing(2);
+    font-size: 1.2rem;
+
+    > li {
+        position: relative;
+        line-height: spacing(2);
+
+        &::after {
+            @include vertical-bars();
+            right: spacing(-1);
+        }
+        &:last-of-type::after {
+            content: none;
+        }
+
+        a {
+            transition: 0.3s;
+        }
+        a:hover,
+        a:active {
+            color: white;
+        }
     }
 }
 // -----------------------------------------
