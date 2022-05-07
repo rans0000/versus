@@ -3,7 +3,10 @@
 $font-opensans: "Open Sans", sans-serif;
 $font-rubik: "Rubik", sans-serif;
 $color-primary: #2a357c;
+$color-primary-light: #e3f2fd;
 $color-secondary: #db5462;
+$color-success-light: #8cd996;
+$color-text-dark: #4b4b4b;
 
 $weight-light: 300;
 $weight-normal: 400;
@@ -71,19 +74,25 @@ body {
     line-height: spacing(6);
 }
 .heading-2 {
+    @extend .heading;
     font-size: 2.8rem;
     line-height: spacing(4);
-    @extend .heading;
 }
 .heading-3 {
+    @extend .heading;
     font-size: 2.5rem;
     line-height: spacing(4);
-    @extend .heading;
 }
 .heading-4 {
+    @extend .heading;
     font-size: 1.8rem;
     line-height: spacing(4);
+}
+.heading-5 {
     @extend .heading;
+    font-size: 2rem;
+    line-height: spacing(3);
+    text-transform: none;
 }
 .align-center {
     text-align: center;
@@ -99,6 +108,9 @@ body {
 }
 .text-white {
     color: white;
+}
+.text-dark {
+    color: $color-text-dark;
 }
 .body-copy-1 {
     font-size: 1.4rem;
@@ -522,6 +534,89 @@ body {
                 @include horizontal-bars;
             }
         }
+    }
+}
+// -----------------------------------------
+.connect-up-wrapper {
+    padding: spacing(8, 0, 10);
+    background-color: $color-primary-light;
+
+    @media only screen and (max-width: 600px) {
+        padding: spacing(8, 0, 6);
+    }
+
+    .container > .title {
+        color: #8a8f8a;
+        margin-bottom: spacing(8);
+        span {
+            display: block;
+            color: $color-success-light;
+        }
+        @media only screen and (max-width: 600px) {
+            margin-bottom: spacing(4);
+        }
+    }
+}
+.connect-up-item {
+    display: flex;
+    gap: spacing(3, 7);
+    margin: spacing(-3, 0);
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        align-items: center;
+        margin: spacing(0, 0, 4);
+    }
+
+    &.connect-up-right {
+        flex-direction: row-reverse;
+        .media-box,
+        .desc-box {
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+            .media-box,
+            .desc-box {
+                text-align: center;
+            }
+        }
+    }
+
+    .media-box {
+        width: spacing(25);
+        flex-basis: spacing(25);
+        height: spacing(25);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .desc-box {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 100;
+        flex-direction: column;
+        justify-content: center;
+        max-width: spacing(44);
+
+        @media only screen and (max-width: 600px) {
+            text-align: center;
+        }
+
+        .title {
+            margin-bottom: spacing(1);
+        }
+        p {
+            font-weight: $weight-medium;
+            line-height: spacing(2);
+        }
+    }
+
+    &.connect-up-call .media-box {
+        background: url(../images/mobile-call-bg.jpg);
+    }
+    &.connect-up-whatsapp .media-box {
+        background: url(../images/whatsapp-bg.jpg);
     }
 }
 // -----------------------------------------
