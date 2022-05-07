@@ -748,11 +748,11 @@ a:visited {
         height: spacing(25);
         border-radius: 50%;
         overflow: hidden;
+        flex-shrink: 0;
     }
     .desc-box {
         display: flex;
         flex-grow: 1;
-        flex-shrink: 100;
         flex-direction: column;
         justify-content: center;
         max-width: spacing(44);
@@ -816,7 +816,9 @@ a:visited {
 
     > .media-box {
         width: spacing(23);
+        flex-basis: spacing(23);
         height: spacing(25);
+        flex-shrink: 0;
         background: url(../images/brochure-bg.svg) 50% 50% no-repeat;
         background-size: cover;
     }
@@ -832,6 +834,22 @@ a:visited {
         }
         p {
             margin-bottom: spacing(0.5);
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        padding: spacing(6);
+        text-align: center;
+        align-items: center;
+
+        > .desc-box {
+            align-items: stretch;
+            gap: spacing(3);
+
+            .title {
+                text-align: center;
+            }
         }
     }
 }
