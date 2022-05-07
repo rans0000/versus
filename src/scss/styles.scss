@@ -18,6 +18,27 @@ $weight-heavy: 700;
     }
     @return $ret;
 }
+@mixin vertical-bars {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    top: 0;
+    right: spacing(-0.5);
+    transform: translate3d(0, 10%, 0);
+    background-color: #e7e9f1;
+}
+@mixin horizontal-bars {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    bottom: spacing(-0.5);
+    left: 0;
+    transform: translate3d(10%, 0, 0);
+    background-color: #e7e9f1;
+}
+// -----------------------------------------
 
 html {
     font-size: 10px;
@@ -35,6 +56,56 @@ body {
     margin: 0;
     padding: 0;
 }
+
+// utils starts
+// -----------------------------------------
+.heading {
+    font-family: $font-rubik;
+    text-transform: uppercase;
+    font-weight: $weight-heavy;
+    margin-bottom: spacing(3);
+}
+.heading-1 {
+    @extend .heading;
+    font-size: 4rem;
+    line-height: spacing(6);
+}
+.heading-2 {
+    font-size: 2.8rem;
+    line-height: spacing(4);
+    @extend .heading;
+}
+.heading-3 {
+    font-size: 2.5rem;
+    line-height: spacing(4);
+    @extend .heading;
+}
+.heading-4 {
+    font-size: 1.8rem;
+    line-height: spacing(4);
+    @extend .heading;
+}
+.align-center {
+    text-align: center;
+}
+.align-right {
+    text-align: center;
+}
+.text-primary {
+    color: $color-primary;
+}
+.text-secondary {
+    color: $color-secondary;
+}
+.text-white {
+    color: white;
+}
+.body-copy-1 {
+    font-size: 1.4rem;
+    line-height: spacing(3);
+}
+// utils ends
+// -----------------------------------------
 
 // components starts
 // -----------------------------------------
@@ -271,6 +342,21 @@ body {
     // @todo: animate menu btn
 }
 // -----------------------------------------
+.icon-group-bare {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(1);
+    justify-content: center;
+    align-items: center;
+
+    > .title {
+        font-family: $font-rubik;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: spacing(2);
+    }
+}
+// -----------------------------------------
 // components ends
 // -----------------------------------------
 
@@ -389,6 +475,52 @@ body {
         }
         .desc-box {
             grid-area: 3/1/4/2;
+        }
+    }
+}
+// -----------------------------------------
+.service-list-wrapper {
+    padding: spacing(8, 0);
+}
+.service-list {
+    display: grid;
+    grid-gap: spacing(1);
+    grid-template-columns: repeat(6, 1fr);
+
+    > li {
+        position: relative;
+        padding: spacing(3, 0);
+
+        &::after {
+            @include vertical-bars;
+        }
+        &:last-of-type::after {
+            content: none;
+        }
+    }
+
+    @media only screen and (max-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+
+        > li {
+            &:nth-of-type(3n)::after {
+                content: none;
+            }
+            &:nth-last-of-type(n + 4)::before {
+                @include horizontal-bars;
+            }
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: auto;
+
+        > li {
+            &:nth-of-type(n)::after {
+                content: none;
+            }
+            &:nth-last-of-type(n + 2)::before {
+                @include horizontal-bars;
+            }
         }
     }
 }
