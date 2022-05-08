@@ -1394,5 +1394,14 @@ a:visited {
     }
 }
 // -----------------------------------------
+.terms-wrapper {
+    padding: spacing(10, 0);
+
+    .title {
+        margin-top: spacing(4);
+        margin-bottom: spacing(1);
+    }
+}
+// -----------------------------------------
 // pages ends
 // -----------------------------------------
