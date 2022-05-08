@@ -646,12 +646,20 @@ a:visited {
     // @todo: animate menu btn
 }
 // -----------------------------------------
-.icon-group-bare {
+a.icon-group-bare {
     display: flex;
     flex-direction: column;
     gap: spacing(1);
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: $color-primary;
+    transition: 0.3s;
+
+    &:hover,
+    &:active {
+        color: $color-success;
+    }
 
     > .title {
         font-family: $font-rubik;
