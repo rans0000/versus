@@ -787,7 +787,7 @@ a:visited {
 }
 // -----------------------------------------
 .doha-map-area-wrapper {
-    background-color: $color-secondary;
+    background-color: rgb(1, 33, 105);
     color: white;
     padding: spacing(9, 0);
 }
@@ -815,7 +815,7 @@ a:visited {
         grid-area: 2/2/3/3;
 
         p {
-            max-width: spacing(55);
+            max-width: spacing(80);
         }
     }
 
