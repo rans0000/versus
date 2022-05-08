@@ -7,7 +7,7 @@ $color-primary-light: #e3f2fd;
 $color-primary-dark: #252941;
 $color-secondary: #db5462;
 $color-secondary-light: #f5cfd3;
-$color-success: #129923;
+$color-success: #00a887;
 $color-success-light: #8cd996;
 $color-text-dark: #4b4b4b;
 $color-text-gray: #999ec0;
@@ -913,7 +913,7 @@ a.icon-group-bare {
         margin-bottom: spacing(8);
         span {
             display: block;
-            color: $color-success-light;
+            color: $color-success;
         }
         @media only screen and (max-width: 600px) {
             margin-bottom: spacing(4);
@@ -976,10 +976,10 @@ a.icon-group-bare {
     }
 
     &.connect-up-call .media-box {
-        background: url(../images/mobile-call-bg.jpg);
+        background: url(../images/mobile-call-bg.png);
     }
     &.connect-up-whatsapp .media-box {
-        background: url(../images/whatsapp-bg.jpg);
+        background: url(../images/whatsapp-bg.png);
     }
 }
 // -----------------------------------------
