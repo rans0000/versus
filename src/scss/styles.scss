@@ -1317,6 +1317,10 @@ a.icon-group-bare {
         grid-gap: spacing(4);
     }
 }
+.smart-solutions-wrapper {
+    @extend .service-para-wrapper;
+    padding: spacing(8, 0);
+}
 // -----------------------------------------
 .service-area {
     padding: spacing(10, 0);
@@ -1343,11 +1347,19 @@ a.icon-group-bare {
     }
 }
 // -----------------------------------------
-.service-area-smart {
-    background-color: #e4aeff;
+.service-area-mep {
+}
+.service-area-hvac {
+    // background-color: #00a9c5;
+    background-color: #57688b;
+    // background-color: #dfdf1d;
+    // background-color: #ff8135;
+    // background-color: #003a70;
+    // background-color: #00a887;
+}
+.service-area-civil {
 }
 .service-area-energy {
-    background-color: #3b0c0c;
 }
 // -----------------------------------------
 .page-banner-contact {
