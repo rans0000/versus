@@ -1102,6 +1102,50 @@ a:visited {
     }
 }
 // -----------------------------------------
+.our-values-wrapper {
+    padding: spacing(10, 0, 6);
+    color: white;
+    background: $color-primary url(../images/dark-workers-bg.jpg) no-repeat center center;
+    background-size: cover;
+
+    .container > .desc-box {
+        text-align: center;
+        max-width: spacing(90);
+        margin: auto;
+    }
+
+    .icon-def-list {
+        margin: spacing(4, 0);
+        display: grid;
+        grid-template-columns: repeat(4, #{spacing(27)});
+        grid-gap: spacing(2, 2);
+        justify-content: space-between;
+
+        @media only screen and (max-width: 980px) {
+            grid-template-columns: repeat(2, 21.6rem);
+            justify-content: center;
+        }
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: spacing(27);
+        }
+
+        .icon-def-item {
+            grid-template-columns: 1fr;
+            grid-gap: spacing(1);
+            text-align: center;
+
+            .icon-box {
+                grid-area: auto;
+            }
+            .title {
+                grid-area: auto;
+            }
+            .desc-box {
+                grid-area: auto;
+            }
+        }
+    }
+}
 // -----------------------------------------
 // pages ends
 // -----------------------------------------
