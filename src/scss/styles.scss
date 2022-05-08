@@ -309,11 +309,25 @@ a:visited {
         padding-left: spacing(1);
     }
 }
+.generic-list-primary {
+    @extend .generic-list;
+
+    > li::marker {
+        content: url(../images/icon-star-blue.svg);
+    }
+}
 .generic-list-secondary {
     @extend .generic-list;
 
     > li::marker {
         content: url(../images/icon-star-red.svg);
+    }
+}
+.generic-list-white {
+    @extend .generic-list;
+
+    > li::marker {
+        content: url(../images/icon-star.svg);
     }
 }
 // -----------------------------------------
@@ -1229,6 +1243,49 @@ a:visited {
     .grid-2x1 {
         grid-gap: spacing(4);
     }
+}
+// -----------------------------------------
+.page-banner-services {
+    background-image: url(../images/services-bg.jpg);
+}
+.service-para-wrapper {
+    padding: spacing(8, 0);
+
+    .grid-2x1 {
+        grid-gap: spacing(4);
+    }
+}
+// -----------------------------------------
+.service-area {
+    padding: spacing(10, 0);
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > .media-box {
+            width: spacing(10);
+            height: spacing(10);
+            border-radius: 50%;
+            background-color: white;
+            margin-bottom: spacing(3);
+        }
+        > .grid-2x1 {
+            grid-gap: spacing(4);
+
+            > .grid-item + .grid-item ul {
+                margin-left: spacing(2);
+            }
+        }
+    }
+}
+// -----------------------------------------
+.service-area-smart {
+    background-color: #e4aeff;
+}
+.service-area-energy {
+    background-color: #3b0c0c;
 }
 // -----------------------------------------
 // pages ends
