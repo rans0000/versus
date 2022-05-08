@@ -190,7 +190,9 @@ a:visited {
 }
 // buttons
 // --------------------
-.btn-main {
+.btn-main,
+a.btn-main:link,
+a.btn-main:visited {
     padding: spacing(0, 3);
     white-space: nowrap;
     margin: 0;
@@ -200,10 +202,13 @@ a:visited {
     font-size: 2rem;
     font-weight: $weight-medium;
     line-height: spacing(6);
+    text-align: center;
+    text-decoration: none;
     min-width: min(100%, #{spacing(25)});
     transition: 0.3s;
 
     &:hover,
+    &:active,
     &:focus {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     }
