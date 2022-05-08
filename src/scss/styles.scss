@@ -339,6 +339,18 @@ a:visited {
             }
         }
     }
+    > .title {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: spacing(4);
+        margin: 0;
+        display: none;
+
+        @media only screen and (max-width: 980px) {
+            display: block;
+        }
+    }
 }
 // -----------------------------------------
 .quick-contact-wrapper {
@@ -503,11 +515,21 @@ a:visited {
 .btn-mainmenu-toggle {
     width: spacing(4);
     height: spacing(4);
-    border-radius: spacing(0.5);
-    background: white url(../images/icon-burger.svg) no-repeat 50% 50%;
+    background: url(../images/icon-burger.svg) no-repeat 50% 50%;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
+    z-index: 1000;
+
+    &.opened {
+    }
+
+    @media only screen and (min-width: 980px) {
+        display: none;
+    }
+    @media only screen and (max-width: 980px) {
+        display: block;
+    }
 
     // @todo: animate menu btn
 }
@@ -545,19 +567,75 @@ a:visited {
     align-items: center;
     justify-content: space-between;
 
-    .btn-mainmenu-toggle {
-        display: none;
-    }
-
     @media only screen and (max-width: 980px) {
         grid-template-columns: repeat(2, auto);
 
         .mainmenu-wrapper {
             position: fixed;
-            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding-top: spacing(10);
+            z-index: 1000;
+            background-color: rgba($color-primary, 90%);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: 0.3s;
+
+            &.opened {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
+
+            > ul {
+                flex-direction: column;
+                align-items: stretch;
+                height: 100%;
+
+                > li {
+                    flex-grow: 1;
+
+                    ::after {
+                        content: "";
+                    }
+
+                    a:link,
+                    a:visited {
+                        display: flex;
+                        text-align: center;
+                        color: white;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100%;
+                        transition: 0.2s;
+                    }
+                    a:hover,
+                    a:active {
+                        background-color: white;
+                        color: $color-primary;
+                    }
+                }
+            }
         }
         .btn-mainmenu-toggle {
+        }
+        .btn-mainmenu-toggle.opened {
             display: block;
+            position: fixed;
+            top: spacing(4);
+            right: spacing(4);
+            width: spacing(4);
+            height: spacing(4);
+            background: url(../images/icon-burger.svg) no-repeat 50% 50%;
+            filter: brightness(5);
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            z-index: 1001;
+            background-color: white;
         }
 
         .quick-contact-wrapper {
@@ -566,6 +644,13 @@ a:visited {
             grid-area: 2/1/3/3;
             width: 100%;
         }
+        &.opened .btn-mainmenu-toggle {
+            filter: brightness(5);
+        }
+        .mainmenu-wrapper > ul > li {
+            border-bottom: 1px solid $color-primary-dark;
+        }
+        /** @todo: make meu btn 'X' while in open state */
     }
     @media only screen and (max-width: 640px) {
         .logo {
@@ -878,7 +963,6 @@ a:visited {
     .address-box {
         display: flex;
         flex-direction: column;
-        // height: 100%;
 
         .title {
             margin-bottom: spacing(0.5);
