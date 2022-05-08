@@ -1380,6 +1380,15 @@ a.icon-group-bare {
             }
         }
     }
+    .contact-map-area {
+        object-fit: cover;
+        img {
+            display: block;
+        }
+        @media only screen and (max-width: 900px) {
+            display: none;
+        }
+    }
 }
 .contact-form-wrapper {
     padding: spacing(10, 0);
