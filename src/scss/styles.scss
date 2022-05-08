@@ -6,9 +6,11 @@ $color-primary: #2a357c;
 $color-primary-light: #e3f2fd;
 $color-primary-dark: #252941;
 $color-secondary: #db5462;
+$color-secondary-light: #f5cfd3;
 $color-success-light: #8cd996;
 $color-text-dark: #4b4b4b;
 $color-text-gray: #999ec0;
+$color-gray: #ededed;
 
 $weight-light: 300;
 $weight-normal: 400;
@@ -269,6 +271,21 @@ a:visited {
         &.social-lk {
             background-image: url(../images/icon-linkedin.svg);
         }
+    }
+}
+// -----------------------------------------
+.tel-box {
+    span {
+        padding-left: spacing(1);
+    }
+}
+// -----------------------------------------
+.grid-2x1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @media only screen and (max-width: 900px) {
+        grid-template-columns: auto;
     }
 }
 // -----------------------------------------
@@ -1035,6 +1052,56 @@ a:visited {
         }
     }
 }
+// -----------------------------------------
+.callus-banner {
+    background-color: $color-secondary;
+    padding: spacing(4, 0);
+    font-size: 2rem;
+    line-height: spacing(4);
+    color: white;
+    text-align: center;
+
+    strong {
+        @extend .heading-2;
+        color: $color-secondary-light;
+    }
+}
+// -----------------------------------------
+.about-us-wrapper {
+    background-color: white;
+    padding: spacing(8, 0);
+
+    .grid-2x1 {
+        grid-gap: spacing(4);
+    }
+    .van-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+}
+// -----------------------------------------
+.mission-vision-wrapper {
+    > .half-split-item {
+        padding-top: spacing(6);
+        padding-bottom: spacing(6);
+    }
+    .mission-box {
+        background-color: $color-gray;
+        padding-right: spacing(4);
+    }
+    .vision-box {
+        background-color: $color-primary;
+        padding-left: spacing(4);
+    }
+}
+// -----------------------------------------
 // -----------------------------------------
 // pages ends
 // -----------------------------------------
