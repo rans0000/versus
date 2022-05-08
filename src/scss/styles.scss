@@ -1221,5 +1221,15 @@ a:visited {
     }
 }
 // -----------------------------------------
+.page-banner-ourteam {
+    background-image: url(../images/our-team-bg.jpg);
+}
+.ourteam-generic {
+    padding: spacing(8, 0);
+    .grid-2x1 {
+        grid-gap: spacing(4);
+    }
+}
+// -----------------------------------------
 // pages ends
 // -----------------------------------------
