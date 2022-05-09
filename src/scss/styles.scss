@@ -917,11 +917,13 @@ a.icon-group-bare {
     }
 
     .container > .title {
-        color: #8a8f8a;
+        // color: #8a8f8a;
+        color: #3f4040;
         margin-bottom: spacing(8);
         span {
             display: block;
-            color: $color-success;
+            // color: $color-success;
+            color: #67b346;
         }
         @media only screen and (max-width: 600px) {
             margin-bottom: spacing(4);
