@@ -6,7 +6,7 @@ import 'swiper/modules/effect-fade/effect-fade.min.css';
 
 const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
-    autoplay: { delay: 5000, },
+    // autoplay: { delay: 5000, },
     loop: true,
     effect: 'fade',
     fadeEffect: {
@@ -15,8 +15,8 @@ const swiper = new Swiper('.swiper', {
     pagination: {
         el: '.swiper-pagination',
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
+    // navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    // }
 });

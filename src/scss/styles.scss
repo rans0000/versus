@@ -614,6 +614,63 @@ a.btn-main:visited {
                 }
             }
         }
+        .avatar-banner-item {
+            background-color: white;
+            position: relative;
+
+            > .media-box {
+                position: absolute;
+                right: 10%;
+                top: spacing(0.5);
+                width: spacing(39);
+                height: spacing(39);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .desc-box {
+                background-color: rgba(64, 151, 219, 0.25);
+                color: #67b346;
+
+                .title {
+                    color: #404040;
+                }
+
+                &::before,
+                &::after,
+                .bars {
+                    background-color: rgba(64, 151, 219, 0.25);
+                }
+
+                @media only screen and (max-width: 640px) {
+                    background-color: rgba(29, 61, 110, 0.93);
+                    color: white;
+                    .title {
+                        color: white;
+                    }
+                }
+            }
+            .hero-specs-list li::marker {
+                content: url(../images/icon-star-green.svg);
+
+                @media only screen and (max-width: 640px) {
+                    content: url(../images/icon-star.svg);
+                }
+            }
+        }
+        .banner-home-automation > .media-box {
+            background-image: url(../images/banenr-smarthome-bg.png);
+        }
+        .banner-home-mep > .media-box {
+            background-image: url(../images/banner-mep-bg.png);
+        }
+        .banner-home-hvac > .media-box {
+            background-image: url(../images/banner-hvac-bg.png);
+        }
+        .banner-home-guest > .media-box {
+            background-image: url(../images/banner-ecohome-bg.png);
+        }
     }
     .hero-specs-list {
         margin-left: 2rem;
