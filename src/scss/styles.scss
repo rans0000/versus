@@ -550,6 +550,7 @@ a.btn-main:visited {
                 color: white;
                 background-color: rgba($color-primary, 0.8);
                 backdrop-filter: blur(3px);
+                font-family: $font-opensans;
 
                 &::before,
                 &::after,
@@ -587,10 +588,11 @@ a.btn-main:visited {
                 }
 
                 .title {
-                    font-family: $font-rubik;
                     font-size: 2.4rem;
                     line-height: spacing(4);
                     text-transform: uppercase;
+                    font-family: $font-opensans;
+                    font-weight: 500 !important;
                 }
             }
 
