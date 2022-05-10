@@ -311,22 +311,22 @@ a.btn-main:visited {
         }
 
         &.social-fb {
-            background-image: url(../images/icon-fb.svg);
+            background-image: url("data-url:../images/icon-fb.svg");
         }
         &.social-tw {
-            background-image: url(../images/icon-twitter.svg);
+            background-image: url("data-url:../images/icon-twitter.svg");
         }
         &.social-in {
-            background-image: url(../images/icon-instagram.svg);
+            background-image: url("data-url:../images/icon-instagram.svg");
         }
         &.social-wt {
-            background-image: url(../images/icon-whatsapp.svg);
+            background-image: url("data-url:../images/icon-whatsapp.svg");
         }
         &.social-yt {
-            background-image: url(../images/icon-youtube.svg);
+            background-image: url("data-url:../images/icon-youtube.svg");
         }
         &.social-lk {
-            background-image: url(../images/icon-linkedin.svg);
+            background-image: url("data-url:../images/icon-linkedin.svg");
         }
     }
 }
@@ -364,21 +364,21 @@ a.btn-main:visited {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star-blue.svg);
+        content: url("data-url:../images/icon-star-blue.svg");
     }
 }
 .generic-list-secondary {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star-red.svg);
+        content: url("data-url:../images/icon-star-red.svg");
     }
 }
 .generic-list-white {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star.svg);
+        content: url("data-url:../images/icon-star.svg");
     }
 }
 // -----------------------------------------
@@ -620,23 +620,23 @@ a.btn-main:visited {
             background-color: white;
             position: relative;
 
-            > .media-box {
-                // position: absolute;
-                // right: 10%;
-                // top: spacing(0.5);
-                // width: spacing(39);
-                // height: spacing(39);
-                // background-position: center center;
-                // background-repeat: no-repeat;
-                // background-size: contain;
-                // position: absolute;
-                // width: 100%;
-                // height: 100%;
-                // top: 0;
-                // left: 0;
-                // background-color: rgba($color-primary, 0.2);
-                // filter: contrast();
-            }
+            // > .media-box {
+            //     // position: absolute;
+            //     // right: 10%;
+            //     // top: spacing(0.5);
+            //     // width: spacing(39);
+            //     // height: spacing(39);
+            //     // background-position: center center;
+            //     // background-repeat: no-repeat;
+            //     // background-size: contain;
+            //     // position: absolute;
+            //     // width: 100%;
+            //     // height: 100%;
+            //     // top: 0;
+            //     // left: 0;
+            //     // background-color: rgba($color-primary, 0.2);
+            //     // filter: contrast();
+            // }
 
             .desc-box {
                 // background-color: rgba(64, 151, 219, 0.25);
@@ -664,10 +664,10 @@ a.btn-main:visited {
                 }
             }
             .hero-specs-list li::marker {
-                content: url(../images/icon-star.svg);
+                content: url("data-url:../images/icon-star.svg");
 
                 @media only screen and (max-width: 640px) {
-                    content: url(../images/icon-star.svg);
+                    content: url("data-url:../images/icon-star.svg");
                 }
             }
         }
@@ -1069,7 +1069,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-about {
-    background-image: url(../images/about-bg.jpg);
+    background-image: url(../images/about-bg.jpg?as=webp);
 }
 // -----------------------------------------
 .home-half-split {
@@ -1375,7 +1375,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-ourteam {
-    background-image: url(../images/our-team-bg.jpg);
+    background-image: url(../images/our-team-bg.jpg?as=webp);
 }
 .ourteam-generic {
     padding: spacing(8, 0);
@@ -1385,7 +1385,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-services {
-    background-image: url(../images/services-bg.jpg);
+    background-image: url(../images/services-bg.jpg?as=webp);
 }
 .service-para-wrapper {
     padding: spacing(8, 0);
@@ -1440,7 +1440,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-contact {
-    background-image: url(../images/contact-bg.jpg);
+    background-image: url(../images/contact-bg.jpg?as=webp);
 }
 .contact-area-wrapper {
     padding: spacing(15, 0);
