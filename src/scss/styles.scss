@@ -672,22 +672,22 @@ a.btn-main:visited {
             }
         }
         .banner-home-all /* > .media-box */ {
-            background-image: url("data-url:../images/banner-all-bg.jpg?as=webp");
+            background-image: url("data-url:../images/banner-all-bg.jpg");
         }
         .banner-home-energymgmt /* > .media-box */ {
-            background-image: url(../images/banner-energymgmt-bg.jpg?as=webp);
+            background-image: url(../images/banner-energymgmt-bg.jpg);
         }
         .banner-home-mep /* > .media-box */ {
-            background-image: url(../images/banner-mep-bg.jpg?as=webp);
+            background-image: url(../images/banner-mep-bg.jpg);
         }
         .banner-home-guest /* > .media-box */ {
-            background-image: url(../images/banner-grms-bg.jpg?as=webp);
+            background-image: url(../images/banner-grms-bg.jpg);
         }
         .banner-home-automation /* > .media-box */ {
-            background-image: url(../images/banner-smarthome-bg.jpg?as=webp);
+            background-image: url(../images/banner-smarthome-bg.jpg);
         }
         .banner-home-hvac /* > .media-box */ {
-            background-image: url(../images/banner-hvac-bg.jpg?as=webp);
+            background-image: url(../images/banner-hvac-bg.jpg);
         }
     }
     .hero-specs-list {
@@ -1069,7 +1069,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-about {
-    background-image: url(../images/about-bg.jpg?as=webp);
+    background-image: url(../images/about-bg.jpg);
 }
 // -----------------------------------------
 .home-half-split {
@@ -1113,7 +1113,7 @@ a.icon-group-bare {
         flex-basis: spacing(23);
         height: spacing(25);
         flex-shrink: 0;
-        background: url(../images/brochure-bg.png?as=webp) 50% 50% no-repeat;
+        background: url(../images/brochure-bg.png) 50% 50% no-repeat;
         background-size: cover;
     }
     > .desc-box {
@@ -1304,7 +1304,7 @@ a.icon-group-bare {
 .our-values-wrapper {
     padding: spacing(10, 0, 6);
     color: white;
-    background: $color-primary url(../images/dark-workers-bg.jpg?as=webp) no-repeat center center;
+    background: $color-primary url(../images/dark-workers-bg.jpg) no-repeat center center;
     background-size: cover;
 
     .container > .desc-box {
@@ -1378,7 +1378,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-ourteam {
-    background-image: url(../images/our-team-bg.jpg?as=webp);
+    background-image: url(../images/our-team-bg.jpg);
 }
 .ourteam-generic {
     padding: spacing(8, 0);
@@ -1388,7 +1388,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-services {
-    background-image: url(../images/services-bg.jpg?as=webp);
+    background-image: url(../images/services-bg.jpg);
 }
 .service-para-wrapper {
     padding: spacing(8, 0);
@@ -1443,7 +1443,7 @@ a.icon-group-bare {
 }
 // -----------------------------------------
 .page-banner-contact {
-    background-image: url(../images/contact-bg.jpg?as=webp);
+    background-image: url(../images/contact-bg.jpg);
 }
 .contact-area-wrapper {
     padding: spacing(15, 0);
