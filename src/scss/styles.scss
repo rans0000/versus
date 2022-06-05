@@ -89,6 +89,12 @@ p {
             border-color: $color-secondary;
             color: $color-secondary;
         }
+        &:disabled {
+            color: $color-text-gray;
+        }
+    }
+    textarea {
+        padding: spacing(2);
     }
 
     textarea {
@@ -224,9 +230,14 @@ a.btn-main:visited {
 .btn-secondary {
     background-color: $color-secondary;
     color: white;
+    transition: 0.3s;
     &:hover,
     &:focus {
         background-color: darken($color-secondary, 10%);
+    }
+    &:disabled {
+        background-color: $color-text-gray;
+        cursor: progress;
     }
 }
 // -----------------------------------------

@@ -121,30 +121,29 @@
                 <!-- @todo: submit form -->
                 <div class="contact-form-wrapper">
                     <div class="container">
-                        <form action="">
-                            <div class="grid-2x1">
-                                <div class="grid-item">
-                                    <div class="input-box">
-                                        <input required type="text" name="firstname" placeholder="First Name" />
-                                    </div>
-                                    <div class="input-box">
-                                        <input required type="text" name="lasttname" placeholder="Lastt Name" />
-                                    </div>
-                                    <div class="input-box">
-                                        <input required type="email" name="email" placeholder="Email" />
-                                    </div>
-                                    <div class="input-box">
-                                        <input required type="text" name="phone" placeholder="Phone" />
-                                    </div>
+                        <form id="contact-form">
+                            <div class="grid-item">
+                                <div class="input-box">
+                                    <input type="hidden" name="contact_number">
+                                    <input required type="text" name="sender_firstname" placeholder="First Name" />
                                 </div>
-                                <div class="grid-item text-area-box">
-                                    <div class="input-box">
-                                        <textarea required rows="4" name="message" placeholder="Message"></textarea>
-                                    </div>
+                                <div class="input-box">
+                                    <input required type="text" name="sender_lasttname" placeholder="Lastt Name" />
+                                </div>
+                                <div class="input-box">
+                                    <input required type="email" name="sender_email" placeholder="Your Email" />
+                                </div>
+                                <div class="input-box">
+                                    <input required type="text" name="sender_phone" placeholder="Phone" />
+                                </div>
+                            </div>
+                            <div class="grid-item text-area-box">
+                                <div class="input-box">
+                                    <textarea required rows="4" name="message" placeholder="Message"></textarea>
                                 </div>
                             </div>
                             <div class="action-area">
-                                <button class="btn-main btn-secondary" type="submit">Submit</button>
+                                <button id="btn-submit" class="btn-main btn-secondary" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -221,7 +220,34 @@
             <!-- footer ends here -->
         </div>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="module" src="scripts/main.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('8vOHHtTysz3SfeeGD');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            const btnSubmit = document.getElementById('btn-submit');
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = "Sending...";
+                console.log(this);
+                emailjs.sendForm('service_rfa7b7w', 'template_0smfl9r', this)
+                    .then(function () {
+                        btnSubmit.disabled = false;
+                        btnSubmit.innerHTML = "Submit";
+                    }, function (error) {
+                        btnSubmit.disabled = false;
+                        btnSubmit.innerHTML = "Submit";
+                        alert("Something went wrong!\nThe email wasn't send.\nPlease try later.");
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>
