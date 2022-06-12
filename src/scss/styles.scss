@@ -89,6 +89,12 @@ p {
             border-color: $color-secondary;
             color: $color-secondary;
         }
+        &:disabled {
+            color: $color-text-gray;
+        }
+    }
+    textarea {
+        padding: spacing(2);
     }
 
     textarea {
@@ -224,9 +230,14 @@ a.btn-main:visited {
 .btn-secondary {
     background-color: $color-secondary;
     color: white;
+    transition: 0.3s;
     &:hover,
     &:focus {
         background-color: darken($color-secondary, 10%);
+    }
+    &:disabled {
+        background-color: $color-text-gray;
+        cursor: progress;
     }
 }
 // -----------------------------------------
@@ -311,22 +322,22 @@ a.btn-main:visited {
         }
 
         &.social-fb {
-            background-image: url(../images/icon-fb.svg);
+            background-image: url("data-url:../images/icon-fb.svg");
         }
         &.social-tw {
-            background-image: url(../images/icon-twitter.svg);
+            background-image: url("data-url:../images/icon-twitter.svg");
         }
         &.social-in {
-            background-image: url(../images/icon-instagram.svg);
+            background-image: url("data-url:../images/icon-instagram.svg");
         }
         &.social-wt {
-            background-image: url(../images/icon-whatsapp.svg);
+            background-image: url("data-url:../images/icon-whatsapp.svg");
         }
         &.social-yt {
-            background-image: url(../images/icon-youtube.svg);
+            background-image: url("data-url:../images/icon-youtube.svg");
         }
         &.social-lk {
-            background-image: url(../images/icon-linkedin.svg);
+            background-image: url("data-url:../images/icon-linkedin.svg");
         }
     }
 }
@@ -364,21 +375,21 @@ a.btn-main:visited {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star-blue.svg);
+        content: url("data-url:../images/icon-star-blue.svg");
     }
 }
 .generic-list-secondary {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star-red.svg);
+        content: url("data-url:../images/icon-star-red.svg");
     }
 }
 .generic-list-white {
     @extend .generic-list;
 
     > li::marker {
-        content: url(../images/icon-star.svg);
+        content: url("data-url:../images/icon-star.svg");
     }
 }
 // -----------------------------------------
@@ -550,6 +561,7 @@ a.btn-main:visited {
                 color: white;
                 background-color: rgba($color-primary, 0.8);
                 backdrop-filter: blur(3px);
+                font-family: $font-opensans;
 
                 &::before,
                 &::after,
@@ -587,10 +599,11 @@ a.btn-main:visited {
                 }
 
                 .title {
-                    font-family: $font-rubik;
                     font-size: 2.4rem;
                     line-height: spacing(4);
                     text-transform: uppercase;
+                    font-family: $font-opensans;
+                    font-weight: 500 !important;
                 }
             }
 
@@ -613,6 +626,79 @@ a.btn-main:visited {
                     }
                 }
             }
+        }
+        .avatar-banner-item {
+            background-color: white;
+            position: relative;
+
+            // > .media-box {
+            //     // position: absolute;
+            //     // right: 10%;
+            //     // top: spacing(0.5);
+            //     // width: spacing(39);
+            //     // height: spacing(39);
+            //     // background-position: center center;
+            //     // background-repeat: no-repeat;
+            //     // background-size: contain;
+            //     // position: absolute;
+            //     // width: 100%;
+            //     // height: 100%;
+            //     // top: 0;
+            //     // left: 0;
+            //     // background-color: rgba($color-primary, 0.2);
+            //     // filter: contrast();
+            // }
+
+            .desc-box {
+                // background-color: rgba(64, 151, 219, 0.25);
+                background-color: rgb(29 97 150 / 65%);
+                // color: #67b346;
+                color: white;
+
+                .title {
+                    // color: #404040;
+                }
+
+                &::before,
+                &::after,
+                .bars {
+                    // background-color: rgba(64, 151, 219, 0.25);
+                    background-color: rgb(29 97 150 / 65%);
+                }
+
+                @media only screen and (max-width: 640px) {
+                    background-color: rgba(29, 61, 110, 0.93);
+                    color: white;
+                    .title {
+                        color: white;
+                    }
+                }
+            }
+            .hero-specs-list li::marker {
+                content: url("data-url:../images/icon-star.svg");
+
+                @media only screen and (max-width: 640px) {
+                    content: url("data-url:../images/icon-star.svg");
+                }
+            }
+        }
+        .banner-home-all /* > .media-box */ {
+            background-image: url("data-url:../images/banner-all-bg.jpg");
+        }
+        .banner-home-energymgmt /* > .media-box */ {
+            background-image: url(../images/banner-energymgmt-bg.jpg);
+        }
+        .banner-home-mep /* > .media-box */ {
+            background-image: url(../images/banner-mep-bg.jpg);
+        }
+        .banner-home-guest /* > .media-box */ {
+            background-image: url(../images/banner-grms-bg.jpg);
+        }
+        .banner-home-automation /* > .media-box */ {
+            background-image: url(../images/banner-smarthome-bg.jpg);
+        }
+        .banner-home-hvac /* > .media-box */ {
+            background-image: url(../images/banner-hvac-bg.jpg);
         }
     }
     .hero-specs-list {
@@ -917,11 +1003,13 @@ a.icon-group-bare {
     }
 
     .container > .title {
-        color: #8a8f8a;
+        // color: #8a8f8a;
+        color: #3f4040;
         margin-bottom: spacing(8);
         span {
             display: block;
-            color: $color-success;
+            // color: $color-success;
+            color: #67b346;
         }
         @media only screen and (max-width: 600px) {
             margin-bottom: spacing(4);
@@ -1036,7 +1124,7 @@ a.icon-group-bare {
         flex-basis: spacing(23);
         height: spacing(25);
         flex-shrink: 0;
-        background: url(../images/brochure-bg.svg) 50% 50% no-repeat;
+        background: url(../images/brochure-bg.png) 50% 50% no-repeat;
         background-size: cover;
     }
     > .desc-box {
@@ -1267,6 +1355,10 @@ a.icon-group-bare {
             }
         }
     }
+}
+.our-team-wrapper {
+    background: $color-primary url(../images/thumbs-up-bg.png?webp) no-repeat center center;
+    background-size: cover;
 }
 // -----------------------------------------
 .sustainability-wrapper {

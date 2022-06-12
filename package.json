@@ -9,7 +9,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/optimizer-data-url": "^2.5.0",
+    "@parcel/transformer-inline-string": "^2.5.0",
     "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "^2.5.0"
+    "@parcel/transformer-webmanifest": "^2.5.0",
+    "parcel": "^2.5.0",
+    "sharp": "^0.29.3"
+  },
+  "dependencies": {
+    "swiper": "^8.1.4"
   }
 }
